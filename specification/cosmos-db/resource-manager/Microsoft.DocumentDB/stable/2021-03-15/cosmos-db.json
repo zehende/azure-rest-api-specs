@@ -7785,7 +7785,7 @@
         "systemManagedKeyEncrytptionStatus": {
           "readOnly": true,
           "type": "string",
-          "description": "Status of system-managed key encryption. Possible values are \"Enabled"\."
+          "description": "Status of system-managed key encryption. Possible values are \"Enabled\"."
         },
         "customerManagedKeyEncryptionStatus": {
           "readOnly": true,
