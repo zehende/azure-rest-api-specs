@@ -213,5 +213,10 @@ cli:
         op: CreateOrUpdate
         apiVersion: '2016-09-30'
       hidden: false
+    - where:
+        group: 'VirtualMachineScaleSets'
+        op: ConvertToSinglePlacementGroup
+        apiVersion: '2020-12-01'
+      hidden: false
 ```
 ### -----end of auto generated cli-directive----- ###
