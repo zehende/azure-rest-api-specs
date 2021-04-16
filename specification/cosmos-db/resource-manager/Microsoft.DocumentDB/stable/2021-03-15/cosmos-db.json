@@ -6089,6 +6089,10 @@
           "description": "The URI of the key vault",
           "type": "string"
         },
+        "encryptionStatus": {
+          "description": "The encryption status",
+          "type": "#/definitions/EncryptionStatus"
+        },
         "defaultIdentity": {
           "description": "The default identity for accessing key vault used in features like customer managed keys. The default identity needs to be explicitly set by the users. It can be \"FirstPartyIdentity\", \"SystemAssignedIdentity\" and more.",
           "type": "string"
@@ -6199,6 +6203,10 @@
         "keyVaultKeyUri": {
           "description": "The URI of the key vault",
           "type": "string"
+        },
+        "reencryptAllDataWithCMK": {
+          "description": "Re-encrypt data after a key vault URI has been set. Will fail if no keyVaultKeyUri is set.",
+          "type": "boolean"
         },
         "defaultIdentity": {
           "description": "The default identity for accessing key vault used in features like customer managed keys. The default identity needs to be explicitly set by the users. It can be \"FirstPartyIdentity\", \"SystemAssignedIdentity\" and more.",
@@ -6345,6 +6353,10 @@
         "keyVaultKeyUri": {
           "description": "The URI of the key vault",
           "type": "string"
+        },
+        "reencryptAllDataWithCMK": {
+          "description": "Re-encrypt data after a key vault URI has been set. Will fail if no keyVaultKeyUri is set.",
+          "type": "boolean"
         },
         "defaultIdentity": {
           "description": "The default identity for accessing key vault used in features like customer managed keys. The default identity needs to be explicitly set by the users. It can be \"FirstPartyIdentity\", \"SystemAssignedIdentity\" and more.",
@@ -7754,6 +7766,33 @@
         "type": "string"
       },
       "description": "Tags are a list of key-value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key no greater than 128 characters and value no greater than 256 characters. For example, the default experience for a template type is set with \"defaultExperience\": \"Cassandra\". Current \"defaultExperience\" values also include \"Table\", \"Graph\", \"DocumentDB\", and \"MongoDB\"."
+    },
+    "EncryptionStatus" : {
+        "type": "object",
+        "description": "The encryption status for the system-managed keys and customer-managed keys.",
+        "properties": {
+          "accountStatus": {
+            "type" : "#/definitions/EncryptionStatusValue",
+            "description" : "Encryption status for this account."
+          },
+
+        }
+    },
+    "EncryptionStatusValue" : {
+      "type": "object",
+      "description": "The current encryption status.",
+      "properties": {
+        "systemManagedKeyEncrytptionStatus": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Status of system-managed key encryption. Possible values are \"Enabled"\."
+        },
+        "customerManagedKeyEncryptionStatus": {
+          "readOnly": true,
+          "type": "string",
+          "description": "Status of customer-managed key encryption. Possible values are \"EnabledForAllData\", \"Disabled\", \"EnabledForNewData\", or \"EncryptionInProgress\"."
+        }
+      }
     },
     "ManagedServiceIdentity": {
       "properties": {
