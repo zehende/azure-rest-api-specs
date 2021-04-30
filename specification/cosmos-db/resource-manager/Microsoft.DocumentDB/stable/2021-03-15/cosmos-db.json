@@ -6086,7 +6086,7 @@
           "type": "boolean"
         },
         "keyVaultKeyUri": {
-          "description": "The URI of the key vault",
+          "description": "The URI of the key vault. Setting a URI if not already set will enable CMK. ",
           "type": "string"
         },
         "encryptionStatus": {
@@ -6201,12 +6201,8 @@
           "type": "boolean"
         },
         "keyVaultKeyUri": {
-          "description": "The URI of the key vault",
+          "description": "The URI of the key vault. Setting a URI if not already set will enable CMK.",
           "type": "string"
-        },
-        "reencryptAllDataWithCMK": {
-          "description": "Re-encrypt data after a key vault URI has been set. Will fail if no keyVaultKeyUri is set.",
-          "type": "boolean"
         },
         "defaultIdentity": {
           "description": "The default identity for accessing key vault used in features like customer managed keys. The default identity needs to be explicitly set by the users. It can be \"FirstPartyIdentity\", \"SystemAssignedIdentity\" and more.",
@@ -6351,12 +6347,8 @@
           "type": "boolean"
         },
         "keyVaultKeyUri": {
-          "description": "The URI of the key vault",
+          "description": "The URI of the key vault. Setting a URI if not already set will enable CMK.",
           "type": "string"
-        },
-        "reencryptAllDataWithCMK": {
-          "description": "Re-encrypt data after a key vault URI has been set. Will fail if no keyVaultKeyUri is set.",
-          "type": "boolean"
         },
         "defaultIdentity": {
           "description": "The default identity for accessing key vault used in features like customer managed keys. The default identity needs to be explicitly set by the users. It can be \"FirstPartyIdentity\", \"SystemAssignedIdentity\" and more.",
