@@ -7782,7 +7782,7 @@
         "customerManagedKeyEncryptionStatus": {
           "readOnly": true,
           "type": "string",
-          "description": "Status of customer-managed key encryption. Possible values are \"EnabledForAllData\", \"Disabled\", \"EnabledForNewData\", or \"EncryptionInProgress\"."
+          "description": "Status of customer-managed key encryption. Possible values are \"EnabledForAllData\", \"Disabled\", or \"EncryptionInProgress\"."
         }
       }
     },
